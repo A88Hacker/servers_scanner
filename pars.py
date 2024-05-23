@@ -4,21 +4,29 @@ import json
 import time
 
 class ExtractInfoFromPage:
-    def __init__(self, url) -> None:
-        self.url = url
+    def __init__(self, url: dict) -> None:
+        self.url_dic = url
 
     def get_cve_json(self):
-        try:
-            response1 = requests.get(self.url)
-            soup = BeautifulSoup(response1.text, 'lxml')
-            button = soup.find('a', class_= "MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-fullWidth MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-fullWidth css-1l09396-Score-json")
-            link = 'https://vulners.com' + button.get('href')
-        except AttributeError:
-            print("None value, repeat in 3 sec...")
-            time.sleep(3)
-            link = 'https://vulners.com' + button.get('href') 
-        response2 = requests.get(link)
-        self.__json_text = json.loads(response2.text)
+        self.json_links = {} 
+        for port, url in self.url_dic.items():
+            for u in url:
+                try:
+                    response1 = requests.get(u)
+                    soup = BeautifulSoup(response1.text, 'lxml')
+                    button = soup.find('a', class_= "MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-fullWidth MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-fullWidth css-1l09396-Score-json")
+                    if port not in  self.json_links:
+                        self.json_links[port] = ["https://vulners.com" + button.get('href')]
+                    else:
+                        self.json_links[port].append("https://vulners.com" + button.get('href'))
+                except AttributeError:
+                    print("None value, repeat in 3 sec...")
+                    time.sleep(3)
+                    if port not in  self.json_links:
+                        self.json_links[port] = ["https://vulners.com" + button.get('href')]
+                    else:
+                        self.json_links[port].append("https://vulners.com" + button.get('href'))
+        print(self.json_links)
 
 
     def get_info_from_json(self):
@@ -42,10 +50,10 @@ class ExtractInfoFromPage:
 
 
 
-
     def get_json(self):
         self.get_cve_json()
         return self.__json_text
 
-e = ExtractInfoFromPage('https://vulners.com/osv/OSV:BIT-APACHE-2020-13938')
-e.get_info_from_json()
+e = ExtractInfoFromPage({22: [ 'https://vulners.com/cve/CVE-2019-9640', 'https://vulners.com/cve/CVE-2019-0192'] , 80:['https://vulners.com/cve/CVE-2019-17567'] })
+# e.get_info_from_json()
+e.get_cve_json()

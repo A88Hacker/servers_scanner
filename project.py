@@ -1,6 +1,6 @@
 import nmap 
 import re
-import pars
+import stuff
 
 class OpenHosts:
     def __init__(self) -> None:     
@@ -53,27 +53,35 @@ class InfoHost:
         self.__scanner = nmap.PortScanner()
         self.__scan_result = self.__scanner.scan(hosts=self.__target, arguments='-A --script=vulners')
 
-    def scan_host(self):
-        # self.__vuln_links = {}
-        for host, result in self.__scan_result['scan'].items():
-            if result['status']['state'] == 'up':
-                print(f'Host: {host} - State: up')
-                print(' ' * 17 + "Server's details:" + ' ' * 17)
-                print()
-                for port in result['tcp']:
-                    print('-' * 17 + "Port's details:" + '-' * 17)
-                    print(f"Port number: {port}")
-                    print(f"Extra info: {result['tcp'][port]['extrainfo']}")
-                    print(f"Name: {result['tcp'][port]['name']}")
-                    print(f"Service: {result['tcp'][port]['product']}")
-                    print(f"Version: {result['tcp'][port]['version']}")
-                    # try:
-                    #     vulners_str = result['tcp'][port]['script']['vulners']
-                    #     self.__vuln_links[port] = re.findall(r'https://[^\s]+', vulners_str)
-                        
+    # def scan_host(self):
+    #     for host, result in self.__scan_result['scan'].items():
+    #         if result['status']['state'] == 'up':
+    #             print(f'Host: {host} - State: up')
+    #             print(' ' * 17 + "Server's details:" + ' ' * 17)
+    #             print()
+    #             for port in result['tcp']:
+    #                 print('-' * 17 + "Port's details:" + '-' * 17)
+    #                 print(f"Port number: {port}")
+    #                 print(f"Extra info: {result['tcp'][port]['extrainfo']}")
+    #                 print(f"Name: {result['tcp'][port]['name']}")
+    #                 print(f"Service: {result['tcp'][port]['product']}")
+    #                 print(f"Version: {result['tcp'][port]['version']}")
 
-                    # except:
-                    #     pass
+    def scan_host(self, filename="scan_results.txt"):
+        with open(filename, 'w') as file:
+            for host, result in self.__scan_result['scan'].items():
+                if result['status']['state'] == 'up':
+                    file.write(f'Host: {host} - State: up\n')
+                    file.write(' ' * 17 + "Server's details:" + ' ' * 17 + '\n\n')
+                    for port in result['tcp']:
+                        file.write('-' * 17 + "Port's details:" + '-' * 17 + '\n')
+                        file.write(f"Port number: {port}\n")
+                        file.write(f"Extra info: {result['tcp'][port]['extrainfo']}\n")
+                        file.write(f"Name: {result['tcp'][port]['name']}\n")
+                        file.write(f"Service: {result['tcp'][port]['product']}\n")
+                        file.write(f"Version: {result['tcp'][port]['version']}\n\n")
+        print(f"Scan results saved to {filename}")
+
     def make_dic_links(self):
         self.__vuln_links = {}
         for host, result in self.__scan_result['scan'].items():
@@ -98,16 +106,15 @@ class InfoHost:
 
         
 
+def start_scan(target):
+    inf = InfoHost(target)
+    inf.scan_host()
+    links_for_pars = inf.get_links()
+    e = stuff.ExtractInfoFromPage(links_for_pars)
+    e.get_info_from_json()
 
 
 
 
-# h = OpenHosts()
-# h.get_hosts_list(ip_addresses='46.216.255.0/24')
 
-# p = OpenPorts()
-# p.get_open_ports('whatismyipaddress.com')
-
-inf = InfoHost("scanme.nmap.org")
-inf.scan_host()
-links_for_pars = inf.get_links()
+start_scan('rezka.ag')

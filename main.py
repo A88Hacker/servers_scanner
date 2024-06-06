@@ -1,6 +1,7 @@
 import nmap 
 import re
-import stuff
+import pars
+
 
 class OpenHosts:
     def __init__(self) -> None:     
@@ -51,9 +52,9 @@ class InfoHost:
     def __init__(self, target) -> None:
         self.__target = target 
         self.__scanner = nmap.PortScanner()
-        self.__scan_result = self.__scanner.scan(hosts=self.__target, arguments='-A --script=vulners')
 
     # def scan_host(self):
+    #     self.__scan_result = self.__scanner.scan(hosts=self.__target, arguments='-A --script=vulners')
     #     for host, result in self.__scan_result['scan'].items():
     #         if result['status']['state'] == 'up':
     #             print(f'Host: {host} - State: up')
@@ -67,20 +68,21 @@ class InfoHost:
     #                 print(f"Service: {result['tcp'][port]['product']}")
     #                 print(f"Version: {result['tcp'][port]['version']}")
 
-    def scan_host(self, filename="scan_results.txt"):
-        with open(filename, 'w') as file:
-            for host, result in self.__scan_result['scan'].items():
-                if result['status']['state'] == 'up':
-                    file.write(f'Host: {host} - State: up\n')
-                    file.write(' ' * 17 + "Server's details:" + ' ' * 17 + '\n\n')
-                    for port in result['tcp']:
-                        file.write('-' * 17 + "Port's details:" + '-' * 17 + '\n')
-                        file.write(f"Port number: {port}\n")
-                        file.write(f"Extra info: {result['tcp'][port]['extrainfo']}\n")
-                        file.write(f"Name: {result['tcp'][port]['name']}\n")
-                        file.write(f"Service: {result['tcp'][port]['product']}\n")
-                        file.write(f"Version: {result['tcp'][port]['version']}\n\n")
-        print(f"Scan results saved to {filename}")
+    def scan_host(self):
+        self.__scan_result = self.__scanner.scan(hosts=self.__target, arguments='-A --script=vulners')
+        info = ''
+        for host, result in self.__scan_result['scan'].items():
+            if result['status']['state'] == 'up':
+                info += f'Host: {host} - State: up\n'
+                info += ' ' * 17 + "Server's details:" + ' ' * 17 + '\n\n'
+                for port in result['tcp']:
+                    info += '-' * 17 + "Port's details:" + '-' * 17 + '\n'
+                    info += f"Port number: {port}\n"
+                    info += f"Extra info:+ {result['tcp'][port]['extrainfo']}\n"
+                    info += f"Name: {result['tcp'][port]['name']}\n"
+                    info += f"Service: {result['tcp'][port]['product']}\n"
+                    info += f"Version: {result['tcp'][port]['version']}\n\n"
+        return info
 
     def make_dic_links(self):
         self.__vuln_links = {}
@@ -99,22 +101,25 @@ class InfoHost:
         self.make_dic_links()
         return self.__vuln_links
   
-            # for port, info in result['tcp'].items():
-            #     print(f"Port: {port} \n --- Additional info: --- \n {info['extrainfo']} \n Name: {info['name']} \n Service: {info['product']} \n Version: {info['version']} \n ------------------------------------------ \n")
-            
+
 
 
         
 
-def start_scan(target):
+
+
+def main(target):
     inf = InfoHost(target)
-    inf.scan_host()
+    data = inf.scan_host()
     links_for_pars = inf.get_links()
-    e = stuff.ExtractInfoFromPage(links_for_pars)
-    e.get_info_from_json()
+    e = pars.ExtractInfoFromPage(links_for_pars)
+    end_scan = e.get_info_from_json(add_info=data)
+    return end_scan
 
 
 
 
+if __name__ == "__main__":
+    main('rezka.ag')
 
-start_scan('rezka.ag')
+

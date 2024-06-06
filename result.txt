@@ -1,0 +1,527 @@
+Host: 82.221.104.145 - State: up
+                 Server's details:                 
+
+-----------------Port's details:-----------------
+Port number: 80
+Extra info:+ 
+Name: http
+Service: nginx
+Version: 
+
+-----------------Port's details:-----------------
+Port number: 443
+Extra info:+ 
+Name: http
+Service: nginx
+Version: 
+
+-----------------Port's details:-----------------
+Port number: 1720
+Extra info:+ 
+Name: h323q931
+Service: 
+Version: 
+
+-----------------Port's details:-----------------
+Port number: 3333
+Extra info:+ protocol 2.0
+Name: ssh
+Service: OpenSSH
+Version: 7.4
+
+--------------------Vulnerabilities for 3333 port--------------------
+CVE Name: EDB-ID:46516 
+Description of vulnerability: 
+Published: 2019-01-11T00:00:00
+Last modified: 2019-01-11T00:00:00
+-----------------CVSS 3 statistics-----------------
+AttackVector: NETWORK
+AttackComplexity: HIGH
+PrivilegesRequired: NONE
+UserInteraction: REQUIRED
+Scope: UNCHANGED
+ConfidentialityImpact: HIGH
+IntegrityImpact: HIGH
+AvailabilityImpact: NONE
+Basic Hazard Assessment: 6.8 from 10
+
+----------Next CVE----------
+CVE Name: EDB-ID:46193 
+Description of vulnerability: 
+Published: 2019-01-18T00:00:00
+Last modified: 2019-01-18T00:00:00
+-----------------CVSS 3 statistics-----------------
+AttackVector: NETWORK
+AttackComplexity: HIGH
+PrivilegesRequired: NONE
+UserInteraction: REQUIRED
+Scope: UNCHANGED
+ConfidentialityImpact: HIGH
+IntegrityImpact: HIGH
+AvailabilityImpact: NONE
+Basic Hazard Assessment: 6.8 from 10
+
+----------Next CVE----------
+CVE Name: CVE-2019-6110 
+Description of vulnerability: In OpenSSH 7.9, due to accepting and displaying arbitrary stderr output from the server, a malicious server (or Man-in-The-Middle attacker) can manipulate the client output, for example to use ANSI control codes to hide additional files being transferred.
+Published: 2019-01-31T18:29:00
+Last modified: 2023-02-23T23:29:26
+-----------------CVSS 3 statistics-----------------
+AttackVector: NETWORK
+AttackComplexity: HIGH
+PrivilegesRequired: NONE
+UserInteraction: REQUIRED
+Scope: UNCHANGED
+ConfidentialityImpact: HIGH
+IntegrityImpact: HIGH
+AvailabilityImpact: NONE
+Basic Hazard Assessment: 6.8 from 10
+
+----------Next CVE----------
+CVE Name: CVE-2019-6109 
+Description of vulnerability: An issue was discovered in OpenSSH 7.9. Due to missing character encoding in the progress display, a malicious server (or Man-in-The-Middle attacker) can employ crafted object names to manipulate the client output, e.g., by using ANSI control codes to hide additional files being transferred. This affects refresh_progress_meter() in progressmeter.c.
+Published: 2019-01-31T18:29:00
+Last modified: 2023-11-07T03:13:05
+-----------------CVSS 3 statistics-----------------
+AttackVector: NETWORK
+AttackComplexity: HIGH
+PrivilegesRequired: NONE
+UserInteraction: REQUIRED
+Scope: UNCHANGED
+ConfidentialityImpact: HIGH
+IntegrityImpact: HIGH
+AvailabilityImpact: NONE
+Basic Hazard Assessment: 6.8 from 10
+
+----------Next CVE----------
+CVE Name: CVE-2020-14145 
+Description of vulnerability: The client side in OpenSSH 5.7 through 8.4 has an Observable Discrepancy leading to an information leak in the algorithm negotiation. This allows man-in-the-middle attackers to target initial connection attempts (where no host key for the server has been cached by the client). NOTE: some reports state that 8.5 and 8.6 are also affected.
+Published: 2020-06-29T18:15:11
+Last modified: 2022-04-28T19:34:17
+-----------------CVSS 3 statistics-----------------
+AttackVector: NETWORK
+AttackComplexity: HIGH
+PrivilegesRequired: NONE
+UserInteraction: NONE
+Scope: UNCHANGED
+ConfidentialityImpact: HIGH
+IntegrityImpact: NONE
+AvailabilityImpact: NONE
+Basic Hazard Assessment: 5.9 from 10
+
+----------Next CVE----------
+CVE Name: CVE-2019-6111 
+Description of vulnerability: An issue was discovered in OpenSSH 7.9. Due to the scp implementation being derived from 1983 rcp, the server chooses which files/directories are sent to the client. However, the scp client only performs cursory validation of the object name returned (only directory traversal attacks are prevented). A malicious scp server (or Man-in-The-Middle attacker) can overwrite arbitrary files in the scp client target directory. If recursive operation (-r) is performed, the server can manipulate subdirectories as well (for example, to overwrite the .ssh/authorized_keys file).
+Published: 2019-01-31T18:29:00
+Last modified: 2023-11-07T03:13:05
+-----------------CVSS 3 statistics-----------------
+AttackVector: NETWORK
+AttackComplexity: HIGH
+PrivilegesRequired: NONE
+UserInteraction: NONE
+Scope: UNCHANGED
+ConfidentialityImpact: NONE
+IntegrityImpact: HIGH
+AvailabilityImpact: NONE
+Basic Hazard Assessment: 5.9 from 10
+
+----------Next CVE----------
+CVE Name: PRION:CVE-2019-6111 
+Description of vulnerability: An issue was discovered in OpenSSH 7.9. Due to the scp implementation being derived from 1983 rcp, the server chooses which files/directories are sent to the client. However, the scp client only performs cursory validation of the object name returned (only directory traversal attacks are prevented). A malicious scp server (or Man-in-The-Middle attacker) can overwrite arbitrary files in the scp client target directory. If recursive operation (-r) is performed, the server can manipulate subdirectories as well (for example, to overwrite the .ssh/authorized_keys file).
+Published: 2019-01-31T18:29:00
+Last modified: 2023-03-24T18:12:00
+-----------------CVSS 3 statistics-----------------
+AttackVector: NETWORK
+AttackComplexity: HIGH
+PrivilegesRequired: NONE
+UserInteraction: NONE
+Scope: UNCHANGED
+ConfidentialityImpact: NONE
+IntegrityImpact: HIGH
+AvailabilityImpact: NONE
+Basic Hazard Assessment: 5.9 from 10
+
+----------Next CVE----------
+CVE Name: EXPLOITPACK:98FE96309F9524B8C84C508837551A19 
+Description of vulnerability: 
+SCP Client - Multiple Vulnerabilities (SSHtranger Things)
+Published: 2019-01-18T00:00:00
+Last modified: 2019-01-18T00:00:00
+-----------------CVSS 3 statistics-----------------
+AttackVector: NETWORK
+AttackComplexity: HIGH
+PrivilegesRequired: NONE
+UserInteraction: NONE
+Scope: UNCHANGED
+ConfidentialityImpact: NONE
+IntegrityImpact: HIGH
+AvailabilityImpact: NONE
+Basic Hazard Assessment: 5.9 from 10
+
+----------Next CVE----------
+CVE Name: EXPLOITPACK:5330EA02EBDE345BFC9D6DDDD97F9E97 
+Description of vulnerability: 
+OpenSSH SCP Client - Write Arbitrary Files
+Published: 2019-01-11T00:00:00
+Last modified: 2019-01-11T00:00:00
+-----------------CVSS 3 statistics-----------------
+AttackVector: NETWORK
+AttackComplexity: HIGH
+PrivilegesRequired: NONE
+UserInteraction: NONE
+Scope: UNCHANGED
+ConfidentialityImpact: NONE
+IntegrityImpact: HIGH
+AvailabilityImpact: NONE
+Basic Hazard Assessment: 5.9 from 10
+
+----------Next CVE----------
+CVE Name: 1337DAY-ID-32328 
+Description of vulnerability: 
+Published: 2019-03-08T00:00:00
+Last modified: 2019-03-08T00:00:00
+-----------------CVSS 3 statistics-----------------
+AttackVector: NETWORK
+AttackComplexity: HIGH
+PrivilegesRequired: NONE
+UserInteraction: REQUIRED
+Scope: UNCHANGED
+ConfidentialityImpact: HIGH
+IntegrityImpact: HIGH
+AvailabilityImpact: NONE
+Basic Hazard Assessment: 6.8 from 10
+
+----------Next CVE----------
+CVE Name: 1337DAY-ID-32009 
+Description of vulnerability: 
+Published: 2019-01-20T00:00:00
+Last modified: 2019-01-20T00:00:00
+-----------------CVSS 3 statistics-----------------
+AttackVector: NETWORK
+AttackComplexity: HIGH
+PrivilegesRequired: NONE
+UserInteraction: REQUIRED
+Scope: UNCHANGED
+ConfidentialityImpact: HIGH
+IntegrityImpact: HIGH
+AvailabilityImpact: NONE
+Basic Hazard Assessment: 6.8 from 10
+
+----------Next CVE----------
+CVE Name: MSF:AUXILIARY-SCANNER-SSH-SSH_ENUMUSERS- 
+Description of vulnerability: This module uses a malformed packet or timing attack to enumerate users on an OpenSSH server. The default action sends a malformed (corrupted) SSH_MSG_USERAUTH_REQUEST packet using public key authentication (must be enabled) to enumerate users. On some versions of OpenSSH under some configurations, OpenSSH will return a "permission denied" error for an invalid user faster than for a valid user, creating an opportunity for a timing attack to enumerate users. Testing note: invalid users were logged, while valid users were not. YMMV.
+
+Published: 2014-11-11T20:59:41
+Last modified: 2023-04-04T09:24:09
+-----------------CVSS 3 statistics-----------------
+There is no key 'cvssV3'CVE Name: EDB-ID:45939 
+Description of vulnerability: 
+Published: 2018-12-04T00:00:00
+Last modified: 2018-12-04T00:00:00
+-----------------CVSS 3 statistics-----------------
+AttackVector: NETWORK
+AttackComplexity: LOW
+PrivilegesRequired: NONE
+UserInteraction: NONE
+Scope: UNCHANGED
+ConfidentialityImpact: LOW
+IntegrityImpact: NONE
+AvailabilityImpact: NONE
+Basic Hazard Assessment: 5.3 from 10
+
+----------Next CVE----------
+CVE Name: EDB-ID:45233 
+Description of vulnerability: 
+Published: 2018-08-21T00:00:00
+Last modified: 2018-08-21T00:00:00
+-----------------CVSS 3 statistics-----------------
+AttackVector: NETWORK
+AttackComplexity: LOW
+PrivilegesRequired: NONE
+UserInteraction: NONE
+Scope: UNCHANGED
+ConfidentialityImpact: LOW
+IntegrityImpact: NONE
+AvailabilityImpact: NONE
+Basic Hazard Assessment: 5.3 from 10
+
+----------Next CVE----------
+CVE Name: CVE-2018-20685 
+Description of vulnerability: In OpenSSH 7.9, scp.c in the scp client allows remote SSH servers to bypass intended access restrictions via the filename of . or an empty filename. The impact is modifying the permissions of the target directory on the client side.
+Published: 2019-01-10T21:29:00
+Last modified: 2023-02-23T23:15:18
+-----------------CVSS 3 statistics-----------------
+AttackVector: NETWORK
+AttackComplexity: HIGH
+PrivilegesRequired: NONE
+UserInteraction: REQUIRED
+Scope: UNCHANGED
+ConfidentialityImpact: NONE
+IntegrityImpact: HIGH
+AvailabilityImpact: NONE
+Basic Hazard Assessment: 5.3 from 10
+
+----------Next CVE----------
+CVE Name: CVE-2018-15919 
+Description of vulnerability: Remotely observable behaviour in auth-gss2.c in OpenSSH through 7.8 could be used by remote attackers to detect existence of users on a target system when GSS2 is in use. NOTE: the discoverer states 'We understand that the OpenSSH developers do not want to treat such a username enumeration (or "oracle") as a vulnerability.'
+Published: 2018-08-28T08:29:00
+Last modified: 2019-03-07T16:29:32
+-----------------CVSS 3 statistics-----------------
+AttackVector: NETWORK
+AttackComplexity: LOW
+PrivilegesRequired: NONE
+UserInteraction: NONE
+Scope: UNCHANGED
+ConfidentialityImpact: LOW
+IntegrityImpact: NONE
+AvailabilityImpact: NONE
+Basic Hazard Assessment: 5.3 from 10
+
+----------Next CVE----------
+CVE Name: CVE-2018-15473 
+Description of vulnerability: OpenSSH through 7.7 is prone to a user enumeration vulnerability due to not delaying bailout for an invalid authenticating user until after the packet containing the request has been fully parsed, related to auth2-gss.c, auth2-hostbased.c, and auth2-pubkey.c.
+Published: 2018-08-17T19:29:00
+Last modified: 2023-02-23T23:13:42
+-----------------CVSS 3 statistics-----------------
+AttackVector: NETWORK
+AttackComplexity: LOW
+PrivilegesRequired: NONE
+UserInteraction: NONE
+Scope: UNCHANGED
+ConfidentialityImpact: LOW
+IntegrityImpact: NONE
+AvailabilityImpact: NONE
+Basic Hazard Assessment: 5.3 from 10
+
+----------Next CVE----------
+CVE Name: CVE-2017-15906 
+Description of vulnerability: The process_open function in sftp-server.c in OpenSSH before 7.6 does not properly prevent write operations in readonly mode, which allows attackers to create zero-length files.
+Published: 2017-10-26T03:29:00
+Last modified: 2022-12-13T12:15:23
+-----------------CVSS 3 statistics-----------------
+AttackVector: NETWORK
+AttackComplexity: LOW
+PrivilegesRequired: NONE
+UserInteraction: NONE
+Scope: UNCHANGED
+ConfidentialityImpact: NONE
+IntegrityImpact: LOW
+AvailabilityImpact: NONE
+Basic Hazard Assessment: 5.3 from 10
+
+----------Next CVE----------
+CVE Name: SSH_ENUM 
+Description of vulnerability: **Name**|  ssh_enum  
+---|---  
+**CVE**|  CVE-2018-15473  
+**Exploit Pack**|  [CANVAS](<http://http://www.immunityinc.com/products-canvas.shtml>)  
+**Description**| ssh_enum  
+**Notes**| CVE Name: CVE-2018-15473  
+VENDOR: The OpenBSD Project  
+NOTES: Module will use different techniques in order to enumerate users on target host(s)  
+As for the file containing usernames, they should be one per line  
+https://isc.sans.edu/forums/diary/OpenSSH+user+enumeration+CVE201815473/24004/  
+http://www.openwall.com/lists/oss-security/2018/08/15/5  
+Tested against:  
+\- SSH-2.0-OpenSSH_7.2p2  
+  
+VersionsAffected:   
+Repeatability: Infinite  
+References: https://isc.sans.edu/forums/diary/OpenSSH+user+enumeration+CVE201815473/24004/  
+CVE Url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-15473  
+Date public: 08/15/2018  
+CVSS: None  
+
+
+Published: 2018-08-17T19:29:00
+Last modified: 2018-08-17T19:29:00
+-----------------CVSS 3 statistics-----------------
+AttackVector: NETWORK
+AttackComplexity: LOW
+PrivilegesRequired: NONE
+UserInteraction: NONE
+Scope: UNCHANGED
+ConfidentialityImpact: LOW
+IntegrityImpact: NONE
+AvailabilityImpact: NONE
+Basic Hazard Assessment: 5.3 from 10
+
+----------Next CVE----------
+CVE Name: PRION:CVE-2018-15919 
+Description of vulnerability: Remotely observable behaviour in auth-gss2.c in OpenSSH through 7.8 could be used by remote attackers to detect existence of users on a target system when GSS2 is in use. NOTE: the discoverer states 'We understand that the OpenSSH developers do not want to treat such a username enumeration (or "oracle") as a vulnerability.'
+Published: 2018-08-28T08:29:00
+Last modified: 2019-03-07T16:29:00
+-----------------CVSS 3 statistics-----------------
+AttackVector: NETWORK
+AttackComplexity: LOW
+PrivilegesRequired: NONE
+UserInteraction: NONE
+Scope: UNCHANGED
+ConfidentialityImpact: LOW
+IntegrityImpact: NONE
+AvailabilityImpact: NONE
+Basic Hazard Assessment: 5.3 from 10
+
+----------Next CVE----------
+CVE Name: PRION:CVE-2018-15473 
+Description of vulnerability: OpenSSH through 7.7 is prone to a user enumeration vulnerability due to not delaying bailout for an invalid authenticating user until after the packet containing the request has been fully parsed, related to auth2-gss.c, auth2-hostbased.c, and auth2-pubkey.c.
+Published: 2018-08-17T19:29:00
+Last modified: 2023-02-23T23:13:00
+-----------------CVSS 3 statistics-----------------
+AttackVector: NETWORK
+AttackComplexity: LOW
+PrivilegesRequired: NONE
+UserInteraction: NONE
+Scope: UNCHANGED
+ConfidentialityImpact: LOW
+IntegrityImpact: NONE
+AvailabilityImpact: NONE
+Basic Hazard Assessment: 5.3 from 10
+
+----------Next CVE----------
+CVE Name: PRION:CVE-2017-15906 
+Description of vulnerability: The process_open function in sftp-server.c in OpenSSH before 7.6 does not properly prevent write operations in readonly mode, which allows attackers to create zero-length files.
+Published: 2017-10-26T03:29:00
+Last modified: 2022-12-13T12:15:00
+-----------------CVSS 3 statistics-----------------
+AttackVector: NETWORK
+AttackComplexity: LOW
+PrivilegesRequired: NONE
+UserInteraction: NONE
+Scope: UNCHANGED
+ConfidentialityImpact: NONE
+IntegrityImpact: LOW
+AvailabilityImpact: NONE
+Basic Hazard Assessment: 5.3 from 10
+
+----------Next CVE----------
+CVE Name: PACKETSTORM:150621 
+Description of vulnerability: 
+Published: 2018-12-05T00:00:00
+Last modified: 2018-12-05T00:00:00
+-----------------CVSS 3 statistics-----------------
+There is no key 'cvssV3'CVE Name: EXPLOITPACK:F957D7E8A0CC1E23C3C649B764E13FB0 
+Description of vulnerability: 
+OpenSSH 2.3  7.7 - Username Enumeration
+Published: 2018-08-21T00:00:00
+Last modified: 2018-08-21T00:00:00
+-----------------CVSS 3 statistics-----------------
+AttackVector: NETWORK
+AttackComplexity: LOW
+PrivilegesRequired: NONE
+UserInteraction: NONE
+Scope: UNCHANGED
+ConfidentialityImpact: LOW
+IntegrityImpact: NONE
+AvailabilityImpact: NONE
+Basic Hazard Assessment: 5.3 from 10
+
+----------Next CVE----------
+CVE Name: EXPLOITPACK:EBDBC5685E3276D648B4D14B75563283 
+Description of vulnerability: 
+OpenSSH  7.7 - User Enumeration (2)
+Published: 2018-12-04T00:00:00
+Last modified: 2018-12-04T00:00:00
+-----------------CVSS 3 statistics-----------------
+AttackVector: NETWORK
+AttackComplexity: LOW
+PrivilegesRequired: NONE
+UserInteraction: NONE
+Scope: UNCHANGED
+ConfidentialityImpact: LOW
+IntegrityImpact: NONE
+AvailabilityImpact: NONE
+Basic Hazard Assessment: 5.3 from 10
+
+----------Next CVE----------
+CVE Name: 1337DAY-ID-31730 
+Description of vulnerability: 
+Published: 2018-12-04T00:00:00
+Last modified: 2018-12-04T00:00:00
+-----------------CVSS 3 statistics-----------------
+AttackVector: NETWORK
+AttackComplexity: LOW
+PrivilegesRequired: NONE
+UserInteraction: NONE
+Scope: UNCHANGED
+ConfidentialityImpact: LOW
+IntegrityImpact: NONE
+AvailabilityImpact: NONE
+Basic Hazard Assessment: 5.3 from 10
+
+----------Next CVE----------
+CVE Name: PRION:CVE-2019-16905 
+Description of vulnerability: OpenSSH 7.7 through 7.9 and 8.x before 8.1, when compiled with an experimental key type, has a pre-authentication integer overflow if a client or server is configured to use a crafted XMSS key. This leads to memory corruption and local code execution because of an error in the XMSS key parsing algorithm. NOTE: the XMSS implementation is considered experimental in all released OpenSSH versions, and there is no supported way to enable it when building portable OpenSSH.
+Published: 2019-10-09T20:15:00
+Last modified: 2023-03-01T01:56:00
+-----------------CVSS 3 statistics-----------------
+AttackVector: LOCAL
+AttackComplexity: LOW
+PrivilegesRequired: LOW
+UserInteraction: NONE
+Scope: UNCHANGED
+ConfidentialityImpact: HIGH
+IntegrityImpact: HIGH
+AvailabilityImpact: HIGH
+Basic Hazard Assessment: 7.8 from 10
+
+----------Next CVE----------
+CVE Name: PRION:CVE-2019-6110 
+Description of vulnerability: In OpenSSH 7.9, due to accepting and displaying arbitrary stderr output from the server, a malicious server (or Man-in-The-Middle attacker) can manipulate the client output, for example to use ANSI control codes to hide additional files being transferred.
+Published: 2019-01-31T18:29:00
+Last modified: 2023-02-23T23:29:00
+-----------------CVSS 3 statistics-----------------
+AttackVector: NETWORK
+AttackComplexity: HIGH
+PrivilegesRequired: NONE
+UserInteraction: REQUIRED
+Scope: UNCHANGED
+ConfidentialityImpact: HIGH
+IntegrityImpact: HIGH
+AvailabilityImpact: NONE
+Basic Hazard Assessment: 6.8 from 10
+
+----------Next CVE----------
+CVE Name: PRION:CVE-2019-6109 
+Description of vulnerability: An issue was discovered in OpenSSH 7.9. Due to missing character encoding in the progress display, a malicious server (or Man-in-The-Middle attacker) can employ crafted object names to manipulate the client output, e.g., by using ANSI control codes to hide additional files being transferred. This affects refresh_progress_meter() in progressmeter.c.
+Published: 2019-01-31T18:29:00
+Last modified: 2023-02-23T23:16:00
+-----------------CVSS 3 statistics-----------------
+AttackVector: NETWORK
+AttackComplexity: HIGH
+PrivilegesRequired: NONE
+UserInteraction: REQUIRED
+Scope: UNCHANGED
+ConfidentialityImpact: HIGH
+IntegrityImpact: HIGH
+AvailabilityImpact: NONE
+Basic Hazard Assessment: 6.8 from 10
+
+----------Next CVE----------
+CVE Name: PRION:CVE-2018-20685 
+Description of vulnerability: In OpenSSH 7.9, scp.c in the scp client allows remote SSH servers to bypass intended access restrictions via the filename of . or an empty filename. The impact is modifying the permissions of the target directory on the client side.
+Published: 2019-01-10T21:29:00
+Last modified: 2023-02-23T23:15:00
+-----------------CVSS 3 statistics-----------------
+AttackVector: NETWORK
+AttackComplexity: HIGH
+PrivilegesRequired: NONE
+UserInteraction: REQUIRED
+Scope: UNCHANGED
+ConfidentialityImpact: NONE
+IntegrityImpact: HIGH
+AvailabilityImpact: NONE
+Basic Hazard Assessment: 5.3 from 10
+
+----------Next CVE----------
+CVE Name: PACKETSTORM:151227 
+Description of vulnerability: 
+Published: 2019-01-18T00:00:00
+Last modified: 2019-01-18T00:00:00
+-----------------CVSS 3 statistics-----------------
+There is no key 'cvssV3'CVE Name: 1337DAY-ID-30937 
+Description of vulnerability: Exploit for linux platform in category remote exploits
+Published: 2018-08-22T00:00:00
+Last modified: 2018-08-22T00:00:00
+-----------------CVSS 3 statistics-----------------
+There is no key 'cvssV3'
